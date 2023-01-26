@@ -2,13 +2,13 @@ const menuLink = document.querySelectorAll('.menu__link');
 
 Array.from(menuLink).forEach(item => item.onclick = () => {
 
-    if (item.nextElementSibling.classList.length < 3) {
+    if (!item.nextElementSibling.className.includes('menu_active')) {
         closeAllSubMenu();
         item.closest('.menu__item').lastElementChild.classList.add('menu_active')
 
         return false;
     }
-    if (item.nextElementSibling.classList.length === 3) {
+    if (item.nextElementSibling.className.includes('menu_active')) {
         item.closest('.menu__item').lastElementChild.classList.remove('menu_active')
 
         return false;
