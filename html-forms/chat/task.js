@@ -24,7 +24,7 @@ chat.addEventListener('click', () => {
 })
 
 inputUser.addEventListener('change', () => {
-    if (inputUser.value) {
+    if (inputUser.value.trim()) {
         message.innerHTML += `
     <div class="message message_client">
         <div class="message__time">${house}:${minutes}</div>
